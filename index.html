@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christopher Fenton — Resume</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0C1F30;
+    --slate: #1B3248;
+    --accent: #4A90D9;
+    --bg: #FAFAF8;
+    --text: #1A1A1A;
+    --text-mid: #4A4A4A;
+    --text-light: #7A7A7A;
+    --border: #E5E3DF;
+    --section-bg: #F4F3F0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--slate) 100%);
+    padding: 48px 0 40px;
+    color: white;
+  }
+  .header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    margin-bottom: 10px;
+  }
+  .header-contact {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+  }
+  .header-contact a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .header-contact a:hover { color: white; }
+  .header-contact span { color: rgba(255,255,255,0.3); }
+
+  /* Sections */
+  .section {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  /* Summary */
+  .summary {
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* Competencies */
+  .competency-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .competency-tag {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    background: var(--section-bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 5px 12px;
+  }
+
+  /* Highlights */
+  .highlight {
+    margin-bottom: 18px;
+    padding-left: 16px;
+    border-left: 2px solid var(--border);
+    transition: border-color 0.2s;
+  }
+  .highlight:last-child { margin-bottom: 0; }
+  .highlight:hover { border-left-color: var(--accent); }
+  .highlight-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--navy);
+    margin-bottom: 3px;
+  }
+  .highlight p {
+    font-size: 14px;
+    color: var(--text-mid);
+    margin: 0;
+  }
+
+  /* Skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 8px 16px;
+    font-size: 14px;
+  }
+  .skills-label {
+    font-weight: 700;
+    color: var(--navy);
+    padding-top: 2px;
+  }
+  .skills-value {
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .skills-grid { grid-template-columns: 1fr; gap: 2px 0; }
+    .skills-label { margin-top: 10px; }
+  }
+
+  /* Experience */
+  .job {
+    margin-bottom: 28px;
+  }
+  .job:last-child { margin-bottom: 0; }
+  .job-header {
+    margin-bottom: 8px;
+  }
+  .job-company {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--navy);
+  }
+  .job-title {
+    font-size: 14px;
+    color: var(--text-mid);
+  }
+  .job-title em { font-style: normal; color: var(--text-light); }
+  .job-intro {
+    font-size: 14px;
+    color: var(--text-mid);
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  .job ul {
+    list-style: none;
+    padding: 0;
+  }
+  .job li {
+    font-size: 14px;
+    color: var(--text-mid);
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 6px;
+    line-height: 1.6;
+  }
+  .job li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Education & Certs */
+  .edu-item {
+    margin-bottom: 12px;
+  }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-degree {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--navy);
+  }
+  .edu-school {
+    font-size: 13px;
+    color: var(--text-mid);
+  }
+
+  .cert-list {
+    font-size: 14px;
+    color: var(--text-mid);
+  }
+  .cert-list div {
+    margin-bottom: 4px;
+  }
+  .cert-date {
+    color: var(--text-light);
+    font-size: 13px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-light);
+  }
+
+  /* Print */
+  @media print {
+    .header { padding: 24px 0 20px; }
+    .section { padding: 20px 0; }
+    body { background: white; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <h1>Christopher Fenton</h1>
+    <div class="header-contact">
+      <span>Washington, DC</span>
+      <span>|</span>
+      <a href="mailto:fentonc2013@gmail.com">fentonc2013@gmail.com</a>
+      <span>|</span>
+      <a href="https://www.linkedin.com/in/fentonc/" target="_blank">linkedin.com/in/fentonc</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <div class="summary">
+      QA strategist and engineering leader with 15+ years of experience building quality programs across defense, aerospace, and cybersecurity domains. Working at the forefront of AI-driven QA by building custom tooling for change-based risk assessment, configuration management verification, and AI reliability evaluation. Actively identifying AI-specific failure classes from guardrail bypasses to agent behavior flaws. Background spans standing up QA functions from scratch, leading test automation programs, and delivering in mission-critical environments where software failures carry real consequences. U.S. Air Force veteran.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Core Competencies</div>
+    <div class="competency-row">
+      <span class="competency-tag">QA Strategy & Leadership</span>
+      <span class="competency-tag">AI Reliability & Agent Behavior Testing</span>
+      <span class="competency-tag">Test Automation</span>
+    </div>
+    <div class="competency-row">
+      <span class="competency-tag">Risk-Based Testing & Release Readiness</span>
+      <span class="competency-tag">AI-Driven QA Tooling</span>
+      <span class="competency-tag">CI/CD & DevOps Integration</span>
+    </div>
+    <div class="competency-row">
+      <span class="competency-tag">Guardrail & Safety Validation</span>
+      <span class="competency-tag">Agile / Kanban / Scrum Practices</span>
+      <span class="competency-tag">Change Management</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Career Highlights</div>
+
+    <div class="highlight">
+      <div class="highlight-title">Pioneered test automation programs</div>
+      <p>Improved test coverage and reduced regression times across three organizations, shortening the test-to-release cycle and cutting Go/No-Go assessment time by nearly 50%.</p>
+    </div>
+
+    <div class="highlight">
+      <div class="highlight-title">Built AI-driven QA tooling</div>
+      <p>Developed custom Claude skills for change-based risk assessment, configuration management verification, MCP API validation, and AI reliability evaluation. Created advisory tools to guide engineers into AI Reliability Engineering roles. Founded the QA AI Workshop to help accelerate AI adoption across 50+ QA professionals. Implemented custom Notion agents for automated reporting and status tracking.</p>
+    </div>
+
+    <div class="highlight">
+      <div class="highlight-title">Led product redevelopment</div>
+      <p>Directed engineering tasking, stakeholder updates, requirements authoring, and full-cycle testing for the replacement of a legacy desktop system with a modern web-based satellite tasking solution — enhancing UI/UX and expanding market reach.</p>
+    </div>
+
+    <div class="highlight">
+      <div class="highlight-title">Built and scaled QA teams</div>
+      <p>Recruited, mentored, and managed teams of up to six engineers; implemented shift-left testing and Agile-aligned processes to strengthen QA collaboration and velocity.</p>
+    </div>
+
+    <div class="highlight">
+      <div class="highlight-title">Orchestrated complex system integrations</div>
+      <p>Led IV&V of guided-missile and secure-communication subsystems on experimental and production aircraft, coordinating test planning and execution that produced five successful mission sorties demonstrating capability.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Technical Skills & Tools</div>
+    <div class="skills-grid">
+      <div class="skills-label">Languages & Scripting</div>
+      <div class="skills-value">Bash, Python, SQL, YAML</div>
+
+      <div class="skills-label">Operating Systems</div>
+      <div class="skills-value">Linux (RPM & DEB), macOS, Windows</div>
+
+      <div class="skills-label">Tools & Platforms</div>
+      <div class="skills-value">Artifactory, AWS, Azure, Claude / Claude Code, Confluence, Cursor, Docker Compose, Git/GitHub, Grafana, Jenkins, Jira, JMeter, Kubernetes, MCP, Notion, PostgreSQL, Postman, TestRail, VS Code</div>
+
+      <div class="skills-label">Frameworks</div>
+      <div class="skills-value">Cucumber, Playwright, Pytest, Robot Framework</div>
+
+      <div class="skills-label">Domains</div>
+      <div class="skills-value">Aerospace Systems, LLM Evaluation, Endpoint Management & Security, Satellite Mission Planning, Web Applications</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Professional Experience</div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-company">Tanium – Washington, DC (Remote)</div>
+        <div class="job-title">Senior QA Engineer / Team Lead <em>| Oct 2021 – Present</em></div>
+      </div>
+      <div class="job-intro">Leading quality engineering for endpoint management software deployed on 19+ million devices worldwide, with increasing focus on AI-driven QA tooling and reliability.</div>
+      <ul>
+        <li>Oversaw workload planning and tasking for 4 engineers, maintaining release velocity amid constantly shifting priorities.</li>
+        <li>Defined and rolled out a cross-team test planning framework adopted by 80% of QA groups, improving visibility and consistency of QA deliverables across engineering orgs.</li>
+        <li>Built automated testing and verification workflows — from UI and API regression using Playwright and Pytest to service-side deployment validation confirming the contract between services and endpoints across a diverse endpoint matrix.</li>
+        <li>Identified critical AI-specific defects in internal LLM integrations — including a guardrail bypass allowing unauthorized endpoint modifications, a vector search returning false-confidence results, and an RBAC agency flaw exposing refusal-of-last-resort behavior in the agent layer.</li>
+        <li>Partnered with release, product, and engineering leadership to define company-wide QA standards, quality gates, and automation priorities across multiple product lines.</li>
+        <li>Represented US-based QA on Internal Steering Committee, bridging on and offshore QA teams and presenting process and resource needs to senior leadership.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-company">Space Ground Systems Solutions (Naval Research Laboratory, Washington, DC)</div>
+        <div class="job-title">Principal Software Engineer / SQA Lead / Functional Manager <em>| Apr 2018 – Sep 2021</em></div>
+      </div>
+      <div class="job-intro">Led comprehensive software quality oversight for a government software program.</div>
+      <ul>
+        <li>Revamped approaches to test planning, risk assessment, defect management, and reporting to shorten test cycles and better inform internal stakeholders.</li>
+        <li>Helped build an automated test suite and pushed for its eventual integration into the code merge and candidate release processes.</li>
+        <li>Managed a diverse QA team of 5 engineers, including two junior engineers promoted within the first 18 months of employment, through technical guidance and mentorship.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-company">Orbit Logic Inc. – Greenbelt, MD</div>
+        <div class="job-title">Senior Systems Engineer <em>| Jun 2016 – Mar 2018</em></div>
+      </div>
+      <div class="job-intro">Directed systems engineering and test coordination for mission planning and satellite tasking software.</div>
+      <ul>
+        <li>Engaged in all aspects of the product lifecycle, including LOE estimation, requirements analysis, system design, sprint planning, and test execution.</li>
+        <li>Administered projects by maintaining schedules, compiling earned value metrics, and collaborating with company ownership to assess resource needs.</li>
+        <li>Represented company at trade shows and milestone reviews domestically and internationally.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-company">Lockheed Martin – Information Systems & Global Solutions (IS&GS), Washington, DC</div>
+        <div class="job-title">Staff Software Quality Engineer <em>| Apr 2015 – Jun 2016</em></div>
+      </div>
+      <div class="job-intro">Spearheaded software quality enhancements on diverse task orders within the FAA NISC III program.</div>
+      <ul>
+        <li>Applied Agile practices across projects and led multi-disciplinary QA initiatives, driving process adoption that helped secure renewal of three task orders previously at risk of cancellation.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-company">Lockheed Martin – Mission Systems & Training (MST), Owego, NY</div>
+        <div class="job-title">Senior Systems Engineer <em>| Apr 2014 – Apr 2015</em></div>
+        <div class="job-title">Systems Engineer <em>| Sep 2011 – Mar 2014</em></div>
+      </div>
+      <ul>
+        <li>Conducted system integration and verification for flight management, navigation, and weapons subsystems on fixed and rotary wing platforms.</li>
+        <li>Led IPT meetings, authored CDRLs, and mentored junior engineers in CONOPS and integration test standards and methods.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Education</div>
+
+    <div class="edu-item">
+      <div class="edu-degree">M.S. Engineering Management (Systems Engineering Minor) – <em>Graduated with Distinction</em></div>
+      <div class="edu-school">Embry-Riddle Aeronautical University, Worldwide Campus</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">B.S. Science, Math & Technology (Information Technology Track)</div>
+      <div class="edu-school">State University of New York, Empire State College – Saratoga Springs, NY</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Certifications & Training</div>
+    <div class="cert-list">
+      <div>Tanium Aspiring Leadership Program <span class="cert-date">– Sep 2023</span></div>
+      <div>ISTQB Advanced Level Test Manager (CTAL) <span class="cert-date">– May 2019</span></div>
+      <div>ISTQB Certified Tester – Foundation Level (CTFL) <span class="cert-date">– Nov 2015</span></div>
+      <div>LM21 Lean Six Sigma Green Belt <span class="cert-date">– Sep 2013</span></div>
+    </div>
+  </div>
+
+</main>
+
+<div class="footer">
+  <div class="container">© 2026 Christopher Fenton</div>
+</div>
+
+</body>
+</html>
