@@ -186,6 +186,7 @@
     color: var(--text-mid);
   }
   .job-title em { font-style: normal; color: var(--text-light); }
+  .job ul + .job-title { margin-top: 14px; margin-bottom: 8px; }
   .job-intro {
     font-size: 14px;
     color: var(--text-mid);
@@ -399,13 +400,19 @@
     <div class="job">
       <div class="job-header">
         <div class="job-company">Tanium – Washington, DC (Remote)</div>
-        <div class="job-title">Senior QA Engineer / Team Lead <em>| Oct 2021 – Present</em></div>
+        <div class="job-title">Senior QA Automation Engineer <em>| Jul 2026 – Present</em></div>
       </div>
-      <div class="job-intro">Leading quality engineering for endpoint management software deployed on 19+ million devices worldwide, with increasing focus on AI-driven QA tooling and reliability.</div>
+      <div class="job-intro">Responsible for elevating quality of endpoint management software deployed on 19+ million devices worldwide, with a focus on test automation and AI evaluation.</div>
+      <ul>
+        <li>Built and continue to maintain an LLM evaluation harness that scores endpoint management AI features against independent oracles, using statistical verdicts across multiple runs rather than traditional pass/fail results.</li>
+        <li>Designed hallucination and prompt-injection checks that an echoed prompt can't pass, tracking refusal rate as a distinct quality signal.</li>
+        <li>Regular contributor to the automation program, spanning both UI and API regression via Playwright and Pytest, adding coverage for net-new features and existing manual regression test cases.</li>
+        <li>Authored multiple Claude skills to expedite recurring QA tasks, including log analysis, endpoint configuration, risk analysis, and OpenSpec requirements coverage review.</li>
+      </ul>
+      <div class="job-title">Senior QA Engineer <em>| Oct 2021 – Jul 2026</em></div>
       <ul>
         <li>Oversaw workload planning and tasking for 4 engineers, maintaining release velocity amid constantly shifting priorities.</li>
         <li>Defined and rolled out a cross-team test planning framework adopted by 80% of QA groups, improving visibility and consistency of QA deliverables across engineering orgs.</li>
-        <li>Built automated testing and verification workflows — from UI and API regression using Playwright and Pytest to service-side deployment validation confirming the contract between services and endpoints across a diverse endpoint matrix.</li>
         <li>Identified critical AI-specific defects in internal LLM integrations — including a guardrail bypass allowing unauthorized endpoint modifications, a vector search returning false-confidence results, and an RBAC agency flaw exposing refusal-of-last-resort behavior in the agent layer.</li>
         <li>Partnered with release, product, and engineering leadership to define company-wide QA standards, quality gates, and automation priorities across multiple product lines.</li>
         <li>Represented US-based QA on Internal Steering Committee, bridging on and offshore QA teams and presenting process and resource needs to senior leadership.</li>
@@ -479,6 +486,7 @@
   <div class="section">
     <div class="section-title">Certifications & Training</div>
     <div class="cert-list">
+      <div>ISTQB Certified Tester – AI Testing (CT-AI) <span class="cert-date">– Oct 2026</span></div>
       <div>Tanium Aspiring Leadership Program <span class="cert-date">– Sep 2023</span></div>
       <div>ISTQB Advanced Level Test Manager (CTAL) <span class="cert-date">– May 2019</span></div>
       <div>ISTQB Certified Tester – Foundation Level (CTFL) <span class="cert-date">– Nov 2015</span></div>
